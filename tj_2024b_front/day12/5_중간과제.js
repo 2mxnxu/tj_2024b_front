@@ -1,10 +1,16 @@
+/*
+    배열순회 - for(let index = 0; index <=배열명.length -1; index++) {
+        배열명[index];
+    }
+*/ 
+/*
 let movieNames = ['히든페이스','위키드','글래디에이터2','청설'];
 let movieRating = [8,4,7,6]
 let out = '';
 //let star1;
 //let star2;
 
-/*for(let i = 0; i <= 10; i++) { 
+for(let i = 0; i <= 10; i++) { 
     for(let j = 0; j <= 10; j++) { 
         star1 =  '★' * movieRating[0]
     }
@@ -22,17 +28,26 @@ for(let index = 0; index <= movieRating.length -1; index++) {
 outHTML = `<ol>`
 document.write(outHTML)
 */
-let starn = 10-movieRating[0];
 
-for(let i = 0; i<= movieRating[0]; i++) {
-    if(i>0) {
-         out += '★'
-    }
-    else {
-    out += '☆'
+let movieNames = ['히든페이스','위키드','글래디에이터2','청설']
+let movieRating = [8,4,7,6]
+let outHTML = `<div> <span></span></div>`
+
+for(let index = 0; index <=movieNames.length -1; index++) {
+    outHTML += `<div> <span>${movieNames[index]}</span>`
+    let scoreHTML = ``
+
+    for (let score = 0; score <=10; score++) {
+        if(score <= movieRating[index])
+        scoreHTML += `★`
+            else {
+                scoreHTML += `☆`
+        }
+     }
+     outHTML += `<span>${scoreHTML}</span></div>`
 }
-}
-document.write(out)
+document.write(outHTML)
+
 /*
 if(movieRating[0] < 1) {
     document.write(movieNames[0])
