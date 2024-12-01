@@ -19,3 +19,49 @@
 
 -->
 
+<!DOCTYPE html>
+<html">
+<head>
+    
+</head>
+<body>
+    <div>
+        <h1>인사관리시스템</h1>
+        이름 <input class="name" type="text" /> <br />
+        생년월일 <input class="birth" type="text" /> <br />
+        인사번호 <input class="num1" type="text" /> <br />
+        <button onclick="info()" type="button">등록</button>
+    </div>
+    <div>
+        <table class="infoOutput" border="1">
+            <tr> <th>이름</th> <th>생년월일</th> <th>인사번호</th> </tr> <br />
+            <tbody>
+            <tr> <td>유재석</td> <td>99-10-09</td> <td>1</td> </tr> <br />
+            <tr> <td>강호동</td> <td>00-01-23</td> <td>2</td> </tr> <br />
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h1>인사점수등록</h1>
+        인사번호 <input class="num2" type="text" /> <br />
+        상반기 <input class="high" type="text" /> <br />
+        하반기 <input class="low" type="text" /> <br />
+        년도 <input class="year" type="text" /> <br />
+        <button onclick="score()" type="button">등록</button>
+    </div>
+    
+    <div>
+        <table class="scoreOutput" border="1">
+            <tr> <th>인사번호</th> <th>상반기점수</th> <th>하반기점수</th> <th>년도</th> </tr> <br />
+            <tbody>
+            <tr> <th>1</th> <th>80</th> <th>90</th> <th>2021</th> </tr> <br />
+            <tr> <th>2</th> <th>70</th> <th>75</th> <th>2020</th> </tr> <br />
+            </tbody>
+        </table>
+
+    </div>
+    
+    <script src="2_중간과제10.js"></script>
+</body>
+</html>
