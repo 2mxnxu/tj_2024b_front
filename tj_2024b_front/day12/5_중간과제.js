@@ -43,4 +43,3 @@ let 예약석 = '<span style="color: red">예약석</span>'
     }
     document.write("<br>");
     }
-

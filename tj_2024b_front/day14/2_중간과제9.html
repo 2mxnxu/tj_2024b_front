@@ -1,40 +1,101 @@
-<!--
-    중간과제9 : 기계식 주차장 시스템 구현
-        [요구사항] 
-        1. 주차할 수 있는 총 차량 대수 20대
-        2. 차량번호와 주차 할 위치를 클릭/입력 받아 [입차]버튼 클릭한다.
-            단) 해당 위치에 입차된 차량이 존재하면 '입차불가' 안내출력 아니면, '입차성공' 안내 출력
-        3. 차량번호를 입력받아 [출차] 버튼 클릭한다
-            단) 출차되는 차량의 위치와 주차료(금액)를 안내 출력
-            단) 금액은 1초당 100원 계산 단 하루가 지나지 않는 조건
-        ===================================================================================
-        [개발순서]
-        1. 프론트엔드 html 구성
-        2. JS 메모리 구성 (배열/변수/CSV)
-        3. 함수 구성( 함수명, 실행조건, 매개변수 판단)
-        4. 각 함수별 기능 구현, 코드 작성
-        5. 각 함수별 기능 구현 후 HTML(onclick) 연동
-        6. 테스트
-        ==================================================================================
-        
--->
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
+
 </head>
+
 <body>
-    <div>
-        차량번호 : <input class="inCarNum"/> <br/>
-        주차위치 : <input class="inCarLoc"/> <br/>
-        <button type="button" onclick="입차함수()"> 입차 </button>
+    <div style="margin-bottom: 50px;">
+        <h1>메인</h1>
+        <img style="margin-bottom: 20px;" src="" /><br />
+        <button class="carIn" type="button">입차</button>
+        <button class="carOut" type="button">출차</button>
     </div>
+    <hr>
+
 
     <div>
-        차량번호 : <input class="outCarNum"/> <br/>
-        <button type="button" onclick="출차함수()"> 출차 </button>
+        <h1>입차</h1>
+        <table border="10">
+            <tr>
+                <td class="a1">a1</td>
+                <td class="a2">a2</td>
+                <td class="a3">a3</td>
+                <td class="a4">a4</td>
+                <td class="a5">a5</td>
+                <td class="a6">a6</td>
+                <td class="a7">a7</td>
+                <td class="a8">a8</td>
+                <td class="a9">a9</td>
+                <td class="a10">a10</td>
+            </tr>
+            <tr>
+                <td class="a11">a11</td>
+                <td class="a12">a12</td>
+                <td class="a13">a13</td>
+                <td class="a14">a14</td>
+                <td class="a15">a15</td>
+                <td class="a16">a16</td>
+                <td class="a17">a17</td>
+                <td class="a18">a18</td>
+                <td class="a19">a19</td>
+                <td class="a20">a20</td>
+            </tr>
+        </table>
     </div>
 
-    <script src="2_중간과제9.js"></script>
+
+    <form>
+        <label for="seat">주차자리선택</label>
+        <select class="carLocation" name="seat" id="seat">
+            <option value="none">=== 선택 ===</option>
+            <option value="a1">a1</option>
+            <option value="a2">a2</option>
+            <option value="a3">a3</option>
+            <option value="a4">a4</option>
+            <option value="a5">a5</option>
+            <option value="a6">a6</option>
+            <option value="a7">a7</option>
+            <option value="a8">a8</option>
+            <option value="a9">a9</option>
+            <option value="a10">a10</option>
+            <option value="a11">a11</option>
+            <option value="a12">a12</option>
+            <option value="a13">a13</option>
+            <option value="a14">a14</option>
+            <option value="a15">a15</option>
+            <option value="a16">a16</option>
+            <option value="a17">a17</option>
+            <option value="a18">a18</option>
+            <option value="a19">a19</option>
+            <option value="a20">a20</option>
+        </select>
+    </form>
+
+    <label for="carNumber">차량번호</label>
+    <input id="carNumber" type="text" class="carNum" />
+    <button onclick="inCar()" type="button">등록</button>
+    <hr />
+    <div id ='outBox'>
+        <h1> 출차 </h1>
+        주차 위치 : <span class="carLocation"></span> <br />
+        차량 번호 : <input type="text" class="carNumber"></span>
+        <button type ="button" onclick="searchCar()" class = "searchBox">조회</button>
+        <hr />
+        입차 시간 : <span class="inCarTime"> </span>
+        출차 시간 : <span class="outCarTime"> </span>
+        <hr />
+        주차료(금액) : <span class="price"></span>
+
+        <div class="deleteBox">
+            <button onclick="outCar()" type="button">출차</button>
+        </div>
+    </div>
+
+
+    <script src='2_중간과제9.js'></script>
 </body>
+
 </html>
