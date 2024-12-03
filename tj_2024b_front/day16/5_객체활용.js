@@ -74,7 +74,7 @@ function 사원전체출력() {
                 <td>${info.birth}</td>
                 <td>
                     <button onclick= "평가등록출력(${info.no})" type = "button"> 평가등록 </button>
-                    <button onclick="사원평가목록(${info.no})" type = "button"> 평가결과 </button>
+                    <button onclick="평가등록추가(${info.no})" type = "button"> 평가결과 </button>
                 </td>
         </tr>`
     }
@@ -105,19 +105,20 @@ function 평가등록출력(클릭된사원번호) {
             평가연도 <input class="year" type="text"/>
             상반기평가 <input class="first" type="text"/>
             하반기평가 <input class="second" type="text"/>
-            <button onclick="점수등록()" type="button">점수등록</button>
+            <button onclick="점수등록(${검색사원.no})" type="button">점수등록</button>
             </form>`
     // 3. 출력
     div.innerHTML = html;
 }
 
 
-function 점수등록() {
+function 점수등록(사원별점수) {
     let year = document.querySelector('.year').value;
     let first = document.querySelector('.first').value;
     let second = document.querySelector('.second').value;
 
     let info = {
+        no : 사원별점수 ,
         year : year,
         first : first,
         second : second
@@ -143,34 +144,24 @@ function 평가목록출력() {
         tbody.innerHTML = html;
 }
 
-function 사원평가목록(클릭된사원번호) {
-    console.log(클릭된사원번호);
-    // 사원번호를 이용한 사원정보 찾기
+function 평가등록추가(no) {
+    let tbody = document.querySelector('.개별평가출력구역')
+    let html = ``
     for(let index = 0; index <= 사원목록.length-1; index++) {
-        let info = 사원목록[index];
-        if(info.no == 클릭된사원번호) {
-            검색사원 = info;
+        let info = 평가목록[index];
+        if(info.no == no) {
+            let html = `
+        <form>
+            <h5>${검색사원.name}</h5>
+             <tr>
+                    <td>${info.year}</td>
+                    <td>${info.first}</td>
+                    <td>${info.second}</td>
+            </tr>
+            </form>`
             break;
         }
     }
-    if (검색사원 == null) { 
-        alert("사원정보가 없습니다");
-        return;
-    }
-    // 1. 어디에
-    let div = document.querySelector('.평가입력구역')
-    // 2. 무엇을
-    let html = `<h3>사원 평가 등록</h3>
-        <form>
-            <h5>${검색사원.name}</h5>
-            평가연도 <input class="year" type="text"/>
-            상반기평가 <input class="first" type="text"/>
-            하반기평가 <input class="second" type="text"/>
-            <button onclick="점수등록()" type="button">점수등록</button>
-            </form>`
-    // 3. 출력
     div.innerHTML = html;
     
-
 }
-
