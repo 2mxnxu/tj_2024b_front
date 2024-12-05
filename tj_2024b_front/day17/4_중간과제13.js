@@ -77,7 +77,7 @@ function 전체출력함수() {
 }
 // [4] 수정함수 (매개변수 : 할일코드 , 리턴값 X)
 function 수정함수(수정할일코드) {
-    for(let index = 0; index<=할일목록.length; index++) {
+    for(let index = 0; index<=할일목록.length-1; index++) {
         if(할일목록[index].할일코드 == 수정할일코드) {
 
             할일목록[index].할일상태 = !할일목록[index].할일상태; // false -> true, true -> false (기존에 할일상태가 true/false 값으로 저장되어 있으니까)
@@ -90,7 +90,7 @@ function 수정함수(수정할일코드) {
 // [5] 삭제함수 (매개변수 : 할일코드 , 리턴값 X)
 function 삭제함수(삭제할일코드) {
     // 1. 배열 내 삭제할 요소(객체)를 찾기
-    for(let index = 0; index<=할일목록.length; index++) {
+    for(let index = 0; index<=할일목록.length-1; index++) {
         if(할일목록[index].할일코드 == 삭제할일코드) {
             할일목록.splice(index , 1);
             break;
