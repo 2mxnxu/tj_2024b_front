@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mian</title>
+    <link rel="stylesheet" href="solution.css">
+</head>
+<body>
+    <div class="user">
+        <div class="login">
+            <h3>로그인</h3>
+            ID : <input class="loginId" type="text"> <br>
+            비밀번호 : <input class="loginPw" type="password"><br>   
+            <button onclick="login()" class="loginBtn">로그인</button>         
+        </div>
+
+        <div class="join">
+            <h3>회원가입</h3>
+            이름 : <input class="joinName" type="text"/> <br>
+            아이디 : <input class="joinId" type="text"/> <br>
+            비밀번호 : <input class="joinPw" type="password" /><br>
+            <button onclick="join()" class="joinBtn">회원가입</button>
+        </div>
+    </div>
+    <div class="text"></div>
+
+    <div class="service">
+        <h3>정보입력창</h3>
+        <h4>필수정보</h4>
+        사용인원 : <input class="person" type="text"> <br>
+        서비스형태 : <input class="serType" type="radio" name="gener" value="Basic"> Basic
+        <input class="serType" type="radio" name="gener" value="Standard"> Standard
+        <input class="serType" type="radio" name="gener" value="Premium"> Premium <br>
+        스토리지 용량 : <input class="storage" type="text"> <br>        
+        구독기간 : <input class="during" type="text">
+        <h4>선택정보</h4>
+        회사명 : <input class="comName" type="text"> <br>
+        전화번호 : <input class="callNum" type="text"> <br>
+        이메일 : <input class="email" type="text"> <br>
+        주소 : <input class="adress" type="text"> <br>
+        <button onclick="serInfo()" class="serInfo">저장</button>
+    </div>
+
+    
+    <div class="serInfoPrint"></div>
+
+    <script src="solution.js"></script>
+    
+</body>
+</html>
+
